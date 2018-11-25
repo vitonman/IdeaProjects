@@ -35,7 +35,11 @@ public class Contacts{
         }
     }
 
-
+    private void updateContact(int position, String name, String number){
+        contactName.set(position,name);
+        contactNumber.set(position,number);
+        System.out.println("YOUR CHANGED BLAH BLAH");
+    }
 
 
 
