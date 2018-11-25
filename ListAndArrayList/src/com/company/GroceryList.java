@@ -6,12 +6,14 @@ public class GroceryList {
 
     private ArrayList<String> groceryList = new ArrayList<String>();
 
-    public ArrayList<String> getGroceryList() {
-        return groceryList;
+
+
+    public void addGroceryItems(String item) {
+        groceryList.add(item);
     }
 
-    public void addGroceryItems(String item){
-        groceryList.add(item);
+    public ArrayList<String> getGroceryList() {
+        return groceryList;
     }
 
     public void printGroceryList(){
@@ -66,11 +68,6 @@ public class GroceryList {
         }else{
             return false;
         }
-    }
-
-    public static void processArrayList(){
-        ArrayList<String> newArray = new ArrayList<String>();
-        newArray.addAll(groceryList.getGroceryList());
     }
 
 
