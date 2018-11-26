@@ -28,12 +28,12 @@ public class mobilePhone {
                 case 2:
                     addContact();
                     break;
-//                case 3:
-//                    updateContact();
-//                    break;
-//                case 4:
-//                    removeContact();
-//                    break;
+                case 3:
+                    updateContact();
+                    break;
+                case 4:
+                    removeContact();
+                    break;
                 case 5:
                     searchContact();
                     break;
@@ -51,11 +51,10 @@ public class mobilePhone {
         System.out.println("\n 0 - To print choice options.");
         System.out.println("\n 1 - To print the list of phone book.");
         System.out.println("\n 2 - To add a new contact.");
-        System.out.println("\n 3 - To modify an item in the list.");
-        System.out.println("\n 4 - To remove an item from the list.");
-        System.out.println("\n 5 - To search for an item in the list.");
-        System.out.println("\n 6 - To search for an item in the list.");
-        System.out.println("\n 7 - To quit the application.");
+        System.out.println("\n 3 - To modify an contact in the list.");
+        System.out.println("\n 4 - To remove an contact from the list.");
+        System.out.println("\n 5 - To search for an name in the list.");
+        System.out.println("\n 6 - To quit the application.");
     }
 
     public static void addContact(){
@@ -72,10 +71,30 @@ public class mobilePhone {
        String name = scanner.nextLine();
        if(contactData.onFile(name)){
            System.out.println("The " + name + " is in your book");
+           contactData.printCurrentContact(name);
        }else{
            System.out.println("There no name: " + name);
        }
    }
+
+   public static void updateContact(){
+       System.out.println("Current name or phone");
+       String name = scanner.nextLine();
+       contactData.printCurrentContact(name);
+       System.out.println("Enter replace name");
+       String newName = scanner.nextLine();
+       System.out.println("Enter new phone");
+       String newPhone = scanner.nextLine();
+       contactData.updateContact(name,newName,newPhone);
+   }
+
+
+    public static void removeContact(){
+        System.out.println("Enter name of contact");
+        String name = scanner.nextLine();
+        contactData.removeContact(name);
+    }
+
 
 
 

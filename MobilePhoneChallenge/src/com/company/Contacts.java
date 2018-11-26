@@ -22,12 +22,39 @@ public class Contacts{
 
     }
 
-    private int findContact(String searchName){
-        return contactName.indexOf(searchName);
+    public void printCurrentContact(String name){
+        System.out.println("Contact name: " + contactName.get(findContact(name))
+                + " number of name: " + contactNumber.get(findContact(name)));
     }
 
-    public boolean onFile(String searchName){
-        int position = findContact(searchName);
+    private int findContact(String searchData){
+        int position = 0;
+        if(contactName.indexOf(searchData)>=0){
+            return contactName.indexOf(searchData);
+        }else if(contactNumber.indexOf(searchData)>=0){
+            return contactNumber.indexOf(searchData);
+        }else{
+            return 0;
+        }
+
+    }
+
+    public void updateContact(String currentName, String newName, String number){
+        int position = findContact(currentName);
+        if(position >= 0){
+            updateContact(position, newName, number);
+        }
+    }
+
+    private void updateContact(int position, String newName, String number){
+        contactName.set(position, newName);
+        contactNumber.set(position, number);
+
+    }
+
+
+    public boolean onFile(String searchData){
+        int position = findContact(searchData);
         if(position >= 0){
             return true;
         }else{
@@ -35,13 +62,20 @@ public class Contacts{
         }
     }
 
-    private void updateContact(int position, String name, String number){
-        contactName.set(position,name);
-        contactNumber.set(position,number);
-        System.out.println("YOUR CHANGED BLAH BLAH");
+
+
+    public void removeContact(String name){
+        int position = findContact(name);
+        if (position >= 0){
+            removeContact(position);
+        }
     }
 
-
+    private void removeContact(int position){
+        contactName.remove(position);
+        contactNumber.remove(position);
+        System.out.println("Contact has been deleted");
+    }
 
 
 }
