@@ -17,6 +17,7 @@ public class Main {
         while(!quit){
             System.out.println("\nEnter action: (6 to show avaiable actions:");
             int action = scanner.nextInt();
+            scanner.nextLine();
 
             switch (action){
                 case 0:
@@ -46,7 +47,6 @@ public class Main {
 
     private static void addNewContact(){
         System.out.println("Enter your contact name:");
-        scanner.nextLine();
         String name = scanner.nextLine();
         System.out.println("Enter phone number: ");
         String number = scanner.nextLine();
@@ -60,7 +60,6 @@ public class Main {
 
     private static void updateContact(){
         System.out.println("Enter existing contact name: ");
-        scanner.nextLine();
         String name = scanner.nextLine();
         Contact existingContactRecord = mobilePhone.queryContact(name);
         if(existingContactRecord == null){
@@ -105,11 +104,6 @@ public class Main {
             return;
         }
         System.out.println("Name: " + existingContactRecord.getName() + " phone number is " + existingContactRecord.getPhoneNumber());
-        if(mobilePhone.removeContact(existingContactRecord)){
-            System.out.println("Succefuly deleted");
-        }else{
-            System.out.println("Error deliting contact");
-        }
     }
 
     private static void startPhone(){

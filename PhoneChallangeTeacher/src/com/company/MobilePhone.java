@@ -6,11 +6,13 @@ public class MobilePhone {
     private String myNumber;
     private ArrayList<Contact> myContacts;
 
+    //CREATE A MOBILEPHONE WITH NUMBER AND ARRAY OF CONTACTS
     public MobilePhone(String myNumber) {
         this.myNumber = myNumber;
         this.myContacts = new ArrayList<Contact>();
     }
 
+    //ADDING A CONTACT TO ARRAY WITH CONTACT CONSTRUCTION CLASS
     public boolean addNewContact(Contact contact){
         if(findContact(contact.getName()) >=0 ){
             System.out.println("Contact is already on file");
@@ -18,6 +20,10 @@ public class MobilePhone {
         }
         myContacts.add(contact);
         return true;
+    }
+
+    private int findContact(Contact contact){
+        return this.myContacts.indexOf(contact);
     }
 
     public boolean updateContact(Contact oldContact, Contact newContact){
@@ -43,9 +49,7 @@ public class MobilePhone {
         return true;
     }
     
-    private int findContact(Contact contact){
-        return this.myContacts.indexOf(contact);
-    }
+
 
     private int findContact(String contactName){
         for (int i = 0; i < this.myContacts.size(); i++) {
