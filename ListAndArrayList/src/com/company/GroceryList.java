@@ -12,7 +12,8 @@ public class GroceryList {
         groceryList.add(item);
     }
 
-    public ArrayList<String> getGroceryList() {
+    public ArrayList<String> getGroceryList()
+    {
         return groceryList;
     }
 

@@ -5,9 +5,10 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
+
         // You job is to create a simple banking application.
-        // There should be a Bank class
-        // It should have an arraylist of Branches
+        // There should be a Bank class  XXX
+        // It should have an arraylist of Branches  XXX
         // Each Branch should have an arraylist of Customers
         // The Customer class should have an arraylist of Doubles (transactions)
         // Customer:
@@ -26,6 +27,8 @@ public class Main {
         // Add data validation.
         // e.g. check if exists, or does not exist, etc.
         // Think about where you are adding the code to perform
+
+        Bank SEB = new Bank();
 
 
 
