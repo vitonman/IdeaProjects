@@ -28,10 +28,26 @@ public class Main {
         // e.g. check if exists, or does not exist, etc.
         // Think about where you are adding the code to perform
 
-        Bank bank1 = new Bank("Seb");
-        bank1.addBranch("seb_laen");
-        bank1.addCustumer("seb_laen", "vitali", 200);
-        bank1.listCustomer("seb_laen",true);
+        Bank bank = new Bank("Estonia national bank");
+
+        bank.addBranch("SEB");
+
+        bank.addCustumer("SEB", "Vitali", 255.23);
+        bank.addCustumer("SEB", "Viktor", 22.33);
+        bank.addCustumer("SEB", "Stanislav", 5435.33);
+
+        bank.addBranch("LHV");
+        bank.addCustumer("LHV", "Stiven", 233.12);
+
+        bank.addCustomerTransaction("SEB", "Vitali", 33);
+        bank.addCustomerTransaction("SEB","Viktor", 323);
+
+        bank.listCustomer("SEB", true);
+        bank.listCustomer("LHV", true);
+        
+        if(!bank.addCustumer("Melbourne", "Oleg", 23.4)){
+            System.out.println("Error Melbourne branch does not exist.");
+        }
 
 
     }
