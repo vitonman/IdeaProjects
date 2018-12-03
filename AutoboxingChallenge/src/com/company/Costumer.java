@@ -5,14 +5,24 @@ import java.util.ArrayList;
 //KLIENT
 public class Costumer {
     private String name;
-    ArrayList<Double> transactions = new ArrayList<Double>();
+    private ArrayList<Double> transactions;
 
-    public void setName(String name, Double start_value) {
+    public Costumer(String name, double initialAmount) {
         this.name = name;
-        transactions.add(start_value);
+        this.transactions = new ArrayList<Double>();
+        addTransaction(initialAmount);
+        //ssssss
     }
 
-    public void setTransactions(ArrayList<Double> transactions) {
-        this.transactions = transactions;
+   public void addTransaction(double amount){
+        this.transactions.add(amount);
+   }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Double> getTransactions() {
+        return transactions;
     }
 }
