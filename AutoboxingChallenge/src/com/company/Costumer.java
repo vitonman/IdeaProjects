@@ -11,7 +11,6 @@ public class Costumer {
         this.name = name;
         this.transactions = new ArrayList<Double>();
         addTransaction(initialAmount);
-        //ssssss
     }
 
    public void addTransaction(double amount){

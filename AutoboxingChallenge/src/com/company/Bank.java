@@ -50,7 +50,7 @@ public class Bank {
         if(branch!=null){
             System.out.println("Customers details for branch " + branch.getName());
 
-            ArrayList<Costumer> branchCustomer = branch.getCostumers();
+            ArrayList<Costumer> branchCustomer = branch.getCostumers(); //sozdajem list custumers
             for (int i = 0; i < branchCustomer.size(); i++) {
                 Costumer branchCostomer = branchCustomer.get(i);
                 System.out.println("Customer: " + branchCostomer.getName() + "[" + (i+1) + "]");
@@ -58,12 +58,14 @@ public class Bank {
                     System.out.println("Transactions");
                     ArrayList<Double> transactions = branchCostomer.getTransactions();
                     for (int j = 0; j < transactions.size() ; j++) {
-                        System.out.println("[" + (j+1) + "] Amount" + transactions.get(i));
+                        System.out.println("[" + (j+1) + "] Amount: " + transactions.get(j));
                     }
                 }
             }
+            return true;
+        }else{
+            return false;
         }
-        return false;
     }
 
 

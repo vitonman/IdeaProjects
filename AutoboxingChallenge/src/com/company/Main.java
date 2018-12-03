@@ -28,7 +28,10 @@ public class Main {
         // e.g. check if exists, or does not exist, etc.
         // Think about where you are adding the code to perform
 
-        Bank SEB = new Bank();
+        Bank bank1 = new Bank("Seb");
+        bank1.addBranch("seb_laen");
+        bank1.addCustumer("seb_laen", "vitali", 200);
+        bank1.listCustomer("seb_laen",true);
 
 
     }
