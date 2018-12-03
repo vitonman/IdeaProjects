@@ -44,11 +44,22 @@ public class Main {
 
         bank.listCustomer("SEB", true);
         bank.listCustomer("LHV", true);
-        
+
         if(!bank.addCustumer("Melbourne", "Oleg", 23.4)){
             System.out.println("Error Melbourne branch does not exist.");
         }
 
+        if(!bank.addBranch("LHV")){
+            System.out.println("Error LHV branch does exist already.");
+        }
+
+        if(!bank.addCustomerTransaction("LHV", "Peter", 323.32)){
+            System.out.println("Custumer does not exist at branch");
+        }
+
+        if(!bank.addCustumer("LHV", "Vitali", 23.12)){
+            System.out.println("Custumer does exist at branch");
+        }
 
     }
 }
