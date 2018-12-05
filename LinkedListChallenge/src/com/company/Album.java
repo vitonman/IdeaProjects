@@ -2,59 +2,39 @@ package com.company;
 
 
 
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class Album {
-    private String name;
-    private LinkedList<Song> songs;
 
-    public Album(String name) {
-        this.name = name;
-        this.songs = new LinkedList<Song>();
+    private ArrayList<Song> songs;
+
+    public Album(ArrayList<Song> songs) {
+        this.songs = songs;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public LinkedList<Song> getSongs() {
+    public ArrayList<Song> getSongs() {
         return songs;
     }
 
-    public void setSongs(LinkedList<Song> songs) {
+    public void setSongs(ArrayList<Song> songs) {
         this.songs = songs;
     }
 
 
-    public static void printSongsFromAlbum(LinkedList<Song> songs){
-        Iterator<Song> songlist = songs.iterator();
-        while(songlist.hasNext()){
-            System.out.println(songlist + ") " + "Song: " + songlist.next());
-        }
-        System.out.println("==============================");
-    }
-
-
-    //WORKING
-    public boolean addSong(String songName, double songDuration){
-        if(findSong(songName) == null){
-            this.songs.add(new Song(songName, songDuration));
+    //adding song if song is not exist
+    public boolean addSongToAlbum(String songName, double duration){
+        if(findSong(songName)==null){
+            this.songs.add(new Song(songName,duration));
             return true;
         }
         return false;
     }
 
-
-    //WORKING
+    //searching the song in album arraylist
     private Song findSong(String songName){
         for (int i = 0; i < this.songs.size(); i++) {
             Song checkedSong = this.songs.get(i);
-            if(checkedSong.getTitle().equals(songName)){
+            if(checkedSong.getName().equals(songName)){
                 return checkedSong;
             }
         }
@@ -62,10 +42,6 @@ public class Album {
     }
 
 
-
-
     //TODO
-    //album class containing a list of songs
-    //print a list of songs
-    //
+    //1. Album class containing a song list(class)
 }

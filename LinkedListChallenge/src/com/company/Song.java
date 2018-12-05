@@ -2,20 +2,20 @@ package com.company;
 
 public class Song {
 
-    private String title;
+    private String name;
     private double duration;
 
-    public Song(String title, double duration) {
-        this.title = title;
+    public Song(String name, double duration) {
+        this.name = name;
         this.duration = duration;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getDuration() {
@@ -25,4 +25,8 @@ public class Song {
     public void setDuration(double duration) {
         this.duration = duration;
     }
+
+
+//TODO
+    //title and duration for song object
 }
