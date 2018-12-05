@@ -13,6 +13,7 @@ public class Album {
     public Album(String albumName) {
         this.albumName = albumName;
         this.songs = new ArrayList<Song>();
+
     }
 
     public String getAlbumName() {
@@ -41,10 +42,6 @@ public class Album {
         }
         return null;
     }
-
-
-
-
 
     //TODO
     //1. Album class containing a song list(class)

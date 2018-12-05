@@ -2,14 +2,20 @@ package com.company;
 
 import java.util.ArrayList;
 
-public class Playlist {
+public class Data {
+
+    //Here is albums & songs data
+    //Album Array
 
     private ArrayList<Album> albums;
 
-    public Playlist() {
+    public Data() {
         this.albums = new ArrayList<Album>();
     }
 
+    public ArrayList<Album> getAlbums() {
+        return albums;
+    }
 
     public boolean addAlbum(String albumName){
         if(findAlbum(albumName) == null){
@@ -17,6 +23,14 @@ public class Playlist {
             return true;
         }
         return false;
+    }
+
+    public void printAlbumData(){
+
+        System.out.println("You have " + albums.size() + " items in your album list");
+        for (int i = 0; i < albums.size() ; i++) {
+            System.out.println((i+1) + ". ->" + albums.get(i).getAlbumName());
+        }
     }
 
     public boolean addSong(String albumName, String songName, double duration){
@@ -49,11 +63,10 @@ public class Playlist {
             }
             return true;
         }else{
+            System.out.println("No that album in list.");
             return false;
         }
 
     }
 
-
 }
-
