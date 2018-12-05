@@ -7,17 +7,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Album> albums;
 
-        Song song1 = new Song("Stopp", 2.55);
-        Song song2 = new Song("Sunshine", 2.55);
-        Song song3 = new Song("Last day", 2.55);
-        Song song4 = new Song("Ochi", 2.55);
-        Song song5 = new Song("Yestarday", 2.55);
 
-        song1.getName();
+        Playlist playlist = new Playlist();
 
-        Album album = new Album();
+        playlist.addAlbum("My_playlist");
+
+        playlist.addSong("My_playlist", "Dodo", 2.4);
+        playlist.addSong("My_playlist", "D2do", 2.4);
+        playlist.addSong("My_playlist", "D1do", 2.4);
+        playlist.addSong("My_playlist", "D3do", 2.4);
+        playlist.addSong("My_playlist", "D4do", 2.4);
+        playlist.addSong("My_playlist", "Do", 2.4);
+        playlist.addSong("My_playlist", "5odo", 2.4);
+
+
+        
 
         // The albums will be stored in an ArrayList
         // Songs from different albums can be added to the playlist and will appear in the list in the order
@@ -46,5 +51,8 @@ public class Main {
         //LIST OF SONGS IN PLAYLIST
         //SONG MUST EXIST IN ALBUM BEFORE IT CAN BE ADDET TO PLAYLIST
 
+        //SO HERE WITH LINKED LIST (delete, remove, modify)
+
     }
+
 }

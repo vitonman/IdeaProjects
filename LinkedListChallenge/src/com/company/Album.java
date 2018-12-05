@@ -6,23 +6,24 @@ import java.util.ArrayList;
 
 public class Album {
 
+    private String albumName;
     private ArrayList<Song> songs;
 
-    public Album(ArrayList<Song> songs) {
-        this.songs = songs;
+
+    public Album(String albumName) {
+        this.albumName = albumName;
+        this.songs = new ArrayList<Song>();
     }
 
+    public String getAlbumName() {
+        return albumName;
+    }
     public ArrayList<Song> getSongs() {
         return songs;
     }
 
-    public void setSongs(ArrayList<Song> songs) {
-        this.songs = songs;
-    }
-
-
     //adding song if song is not exist
-    public boolean addSongToAlbum(String songName, double duration){
+    public boolean addSong(String songName, double duration){
         if(findSong(songName)==null){
             this.songs.add(new Song(songName,duration));
             return true;
@@ -40,6 +41,9 @@ public class Album {
         }
         return null;
     }
+
+
+
 
 
     //TODO
