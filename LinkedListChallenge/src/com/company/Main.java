@@ -3,6 +3,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Main {
 
@@ -32,12 +33,54 @@ public class Main {
         albums.add(album);
 
         LinkedList<Song> playList = new LinkedList<Song>();
-        albums.get(0).addToPlayList("You can't do it right", playList);
+        albums.get(0).addToPlayList("Stormbringer", playList);
         albums.get(0).addToPlayList("The gypsy", playList);
         albums.get(0).addToPlayList("Soldier of fortune", playList);
+        albums.get(0).addToPlayList(3, playList);
+        albums.get(1).addToPlayList(2, playList);
+        albums.get(1).addToPlayList(3, playList);
+        albums.get(1).addToPlayList(4, playList);
+        albums.get(1).addToPlayList(5, playList);
+        albums.get(1).addToPlayList(6, playList);
 
-
-
+        play(playList);
     }
+
+    private static void play(LinkedList<Song> playList){
+        ListIterator<Song> listIterator = playList.listIterator();
+        if(playList.size() == 0){
+            System.out.println("No songs in playlist.");
+            return;
+        }else{
+            System.out.println("Now playying " + listIterator.next().toString());
+
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
