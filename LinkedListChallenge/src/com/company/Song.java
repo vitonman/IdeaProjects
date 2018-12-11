@@ -1,5 +1,6 @@
 package com.company;
 
+
 public class Song {
     private String title;
     private double duration;
@@ -10,10 +11,9 @@ public class Song {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
-    @Override
     public String toString() {
         return this.title + ": " + this.duration;
     }
