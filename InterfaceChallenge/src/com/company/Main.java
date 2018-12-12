@@ -17,8 +17,13 @@ public class Main {
         System.out.println(vitali);
         vitali.setWeapon("Hammer");
         saveObject(vitali);
-        loadObject(vitali);
+        //loadObject(vitali);
         System.out.println(vitali);
+
+        ISaveable werewolf = new Monster("Werewolf", 20, 40);
+        System.out.println("Strength = " + ((Monster) werewolf).getStrength());//<<<---- VAZNIJ MOMENT
+        System.out.println(werewolf);
+        saveObject(werewolf);
     }
 
 
