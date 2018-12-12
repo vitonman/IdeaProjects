@@ -9,8 +9,16 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-       ISaveable vitagame;
+        Player vitali = new Player("Vitali", 10, 15);
+        System.out.println(vitali.toString());
+        saveObject(vitali);
 
+        vitali.setHitPoint(8);
+        System.out.println(vitali);
+        vitali.setWeapon("Hammer");
+        saveObject(vitali);
+        loadObject(vitali);
+        System.out.println(vitali);
     }
 
 
@@ -63,13 +71,6 @@ public class Main {
                     values.add(index, stringInput);
                     index++;
                     break;
-                case 2:
-                    System.out.print("Enter a string: ");
-
-
-
-
-                    break;
             }
         }
         return values;
@@ -91,4 +92,11 @@ public class Main {
             System.out.println("Saving " + objectToSave.write().get(i) + " to storage device");
         }
     }
+
+    public static void loadObject(ISaveable objectToLoad){
+        ArrayList<String> values = readValues();
+        objectToLoad.read(values);
+    }
+
+
 }
