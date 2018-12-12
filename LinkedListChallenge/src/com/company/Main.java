@@ -1,12 +1,8 @@
 package com.company;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.ListIterator;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    private static ArrayList<Album> albums = new ArrayList();
+    private static List<Album> albums = new ArrayList();
 
     public Main() {
     }
@@ -34,7 +30,7 @@ public class Main {
         album.addSong("Breaking the rules", 5.32D);
         album.addSong("Night of the long knives", 5.12D);
         albums.add(album);
-        LinkedList<Song> playList = new LinkedList();
+        List<Song> playList = new ArrayList<Song>();
         ((Album)albums.get(0)).addToPlayList("You can't do it right", playList);
         ((Album)albums.get(0)).addToPlayList("Holy man", playList);
         ((Album)albums.get(0)).addToPlayList("Speed king", playList);
@@ -46,7 +42,7 @@ public class Main {
         play(playList);
     }
 
-    private static void play(LinkedList<Song> playList) {
+    private static void play(List<Song> playList) {
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         boolean forward = true;
@@ -138,7 +134,7 @@ public class Main {
         System.out.println("0 - to quit\n1 - to play next song\n2 - to play previous song\n3 - to replay the current song\n4 - list songs in the playlist\n5 - print available actions.\n6 - delete current song from playlist");
     }
 
-    private static void printList(LinkedList<Song> playList) {
+    private static void printList(List<Song> playList) {
         Iterator<Song> iterator = playList.iterator();
         System.out.println("================================");
 
