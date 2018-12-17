@@ -107,7 +107,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="1918" />
     <option name="y" value="180" />
     <option name="width" value="800" />
@@ -192,7 +192,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1918" y="180" width="800" height="900" extended-state="0" />
+    <frame x="1918" y="180" width="800" height="900" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
