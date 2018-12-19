@@ -57,7 +57,7 @@ public class Main {
         //
         // Create a string data array to avoid typing loads of addItem instructions:
 
-        MyLinkedList list = new MyLinkedList(null);
+        SearchTree list = new SearchTree(null);
         list.traverse(list.getRoot());
 
         String stringData = "5 7 3 9 8 2 1 0 4 6";
@@ -69,5 +69,6 @@ public class Main {
         }
 
         list.traverse(list.getRoot());
+
     }
 }
