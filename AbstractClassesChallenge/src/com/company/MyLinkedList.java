@@ -55,11 +55,78 @@ public class MyLinkedList implements NodeList {
 
     @Override
     public boolean removeItem(ListItem item) {
+        if(item != null) {
+            System.out.println("Deleting item " + item.getValue());
+        }
+        ListItem curreItem = this.root;
+        while(curreItem != null){
+            int comparison = curreItem.compareTo(item);
+            if(comparison == 0){
+                //found the item to delete
+                if(curreItem == this.root){
+                    this.root = curreItem.next();
+                }else{
+                    curreItem.previous().setNext(curreItem.next());
+                    if(curreItem.next() != null){
+                        curreItem.next().setPrevious(curreItem.previous());
+                    }
+                }
+                return true;
+            }else if(comparison<0){
+                curreItem = curreItem.next();
+            }else {
+                //comparison >0
+                //item not in the list
+                return false;
+            }
+        }
+        //We have reached the end of the list
         return false;
+
     }
 
     @Override
     public void traverse(ListItem root) {
+        if(root == null){
+            System.out.println("The list is empty");
+        }else{
+            while(root != null){
+                System.out.println(root.getValue());
+                root = root.next();
+            }
+        }
+
+
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

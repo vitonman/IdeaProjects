@@ -56,18 +56,18 @@ public class Main {
         // a loop as in the example below.
         //
         // Create a string data array to avoid typing loads of addItem instructions:
-        String stringData = "Darwin Brisbane Perth Melbourne Canberra Adelaide Sydney Canberra";
-        String[] data = stringData.split(" ");
-        Store store = new Store("data");
-        store.addInList("sdsad");
-        store.addInList("wwwwwww");
-        store.showList("data");
-        for (String s : data) {
-            // create new item with value set to the string s;
 
+        MyLinkedList list = new MyLinkedList(null);
+        list.traverse(list.getRoot());
+
+        String stringData = "5 7 3 9 8 2 1 0 4 6";
+
+        String[] data = stringData.split(" ");
+        for (String s : data) {
+            // create new item with value set to the string s
+            list.addItem(new Node(s));
         }
 
-
-
+        list.traverse(list.getRoot());
     }
 }
