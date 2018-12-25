@@ -79,7 +79,7 @@ public class SearchTree implements NodeList{
     }
 
     private void performRemoval(ListItem item, ListItem parent){
-        
+
     }
 
     @Override
