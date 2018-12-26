@@ -29,9 +29,16 @@ public class Main {
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer backgam = new SoccerPlayer("Beckham");
 
-        Team adelaideCrows = new Team("Adelaide Crows");
+        Team<FootballPlayer> adelaideCrows = new Team<>("Adelaide Crows");
         adelaideCrows.addPlayer(joe);
-        adelaideCrows.addPlayer(pat);
-        adelaideCrows.addPlayer(backgam);
+//        adelaideCrows.addPlayer(pat);
+//        adelaideCrows.addPlayer(backgam);
+        System.out.println(adelaideCrows.numPlayers());
 
+        Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
+        baseballTeam.addPlayer(pat);
+
+        Team<String> brokenTeam = new Team<>("this wonr work");
+        brokenTeam.addPlayer("no-one");
+    }
 }
