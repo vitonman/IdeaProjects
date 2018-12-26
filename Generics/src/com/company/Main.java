@@ -38,7 +38,22 @@ public class Main {
         Team<BaseballPlayer> baseballTeam = new Team<>("Chicago Cubs");
         baseballTeam.addPlayer(pat);
 
-        Team<String> brokenTeam = new Team<>("this wonr work");
-        brokenTeam.addPlayer("no-one");
+        Team<SoccerPlayer> brokenTeam = new Team<>("this wonr work");
+        brokenTeam.addPlayer(backgam);
+
+        Team<FootballPlayer> melbourne = new Team <>("Hawthorn");
+        FootballPlayer banks = new FootballPlayer("Goron");
+        melbourne.addPlayer(banks);
+
+        Team<FootballPlayer> hawthorn = new Team<>("Hawthorn");
+        Team<FootballPlayer> fremantle = new Team<>("Fremantle");
+
+        hawthorn.matchResult(fremantle, 1, 0);
+        hawthorn.matchResult(adelaideCrows, 3,8);
+
+        adelaideCrows.matchResult(fremantle,2,1);
+        adelaideCrows.matchResult(baseballTeam,12,3);
+        
+
     }
 }
